@@ -9,7 +9,7 @@ const sequelize = new Sequelize(database, username, password, {
   dialect,
 });
 
-const Marker = require("./marker")(sequelize.DataTypes);
+const Marker = require("./marker")(sequelize, sequelize.DataTypes);
 
 const db = {};
 db.Marker = Marker;
