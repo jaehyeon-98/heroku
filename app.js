@@ -10,6 +10,10 @@ const { Marker } = db;
 
 app.use(express.json());
 
+app.get("/api/markers", (req, res) => {
+  res.send(markers);
+});
+
 app.get("/api/markers/:id", (req, res) => {
   const { id } = req.params;
   const marker = markers.find((m) => m.id === Number(id));
