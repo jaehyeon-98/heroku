@@ -10,6 +10,10 @@ const { Marker } = db;
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("URL should contain /api/..");
+});
+
 app.get("/api/markers", (req, res) => {
   res.send(markers);
 });
