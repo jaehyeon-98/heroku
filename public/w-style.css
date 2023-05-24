@@ -1,0 +1,148 @@
+.wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+.wrap * {padding: 0;margin: 0;}
+.wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
+.wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+
+.info .title {padding: 3px 0 0 10px;height: 30px;background: #2e77fd;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: 600; color: #fff; font-family: 'GmarketSansMedium';}
+.info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+.info .close:hover {cursor: pointer;}
+.info .body {position: relative;overflow: hidden;}
+.info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
+
+.desc {
+  width: 300px;
+}
+
+.ellipsis {
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000000;
+  margin-top: -7px;
+  font-weight:600;
+}
+
+.desc .jibun {
+  font-size: 11px;
+  color: #656665;
+  margin-top: 3px;
+  white-space: pre-line;
+  font-weight: normal;
+}
+
+    .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
+    .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+    .info .link {color: #5085BB;}
+
+    @font-face {
+        font-family: 'GmarketSansMedium';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+
+    .lbutton-style {
+        z-index: 1;
+        position: absolute;
+        bottom: 45px;
+        right: 30px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #2e77fd;
+        font-weight: 600;
+        border: none;
+        padding: 12px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'GmarketSansMedium';
+      }
+
+
+      #mapwrap{position:relative;overflow:hidden;}
+      .category, .category *{margin:0;padding:0;color:#000;}   
+      .category {position:absolute;overflow:hidden;top:10px;left:10px;width:150px;height:50px;z-index:10;border:1px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;}
+      .category .menu_selected {background:#FF5F4A;color:#fff;border-left:1px solid #915B2F;border-right:1px solid #915B2F;margin:0 -1px;} 
+      .category li{list-style:none;float:left;width:50px;height:45px;padding-top:5px;cursor:pointer;} 
+      .category .ico_comm {display:block;margin:0 auto 2px;width:22px;height:26px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png') no-repeat;} 
+      .category .ico_coffee {background-position:-10px 0;}  
+      .category .ico_store {background-position:-10px -36px;}   
+      .category .ico_carpark {background-position:-10px -72px;} 
+
+      
+      .search-container {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        text-align: center;
+        width: 100%; /* 수정 */
+        max-width: 400px;
+        overflow: visible; /* 추가 */
+    }
+    
+    .search-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        width: 100%; /* 수정 */
+        max-width: 380px;
+    }
+    
+    #search-input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-right: 5px;
+        width: 70%; /* 수정 */
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }
+    
+    #search-button {
+        padding: 7px 0px;
+        background-color: #03c4ff;
+        color: #fff;
+        border: none;
+        border-radius: 17px;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: 'GmarketSansMedium';
+        width: 16%; /* 수정 */
+        letter-spacing: 2px; /* 글자 간격 조정 */
+        font-weight: 600;
+    }
+    
+    #search-result {
+        max-height: 200px;
+        overflow-y: auto;
+        margin: 5px auto;
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 0.7); /* 투명도 조절 */
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        width: 100%; /* 수정 */
+        max-width: 370px;
+        text-align: center;
+        font-family: 'GmarketSansMedium';
+        font-weight: 200;
+        font-size: 14px;
+        max-height: 20px;
+        transition: height 0.1s; /* 애니메이션 효과 추가 */
+    }
+    
+    #toggle-result-button {
+        max-height: 200px; /* 확장된 높이 설정 */
+    }
+    
+    .search-result-collapsed {
+        height: 0; /* 축소된 높이 설정 */
+    }
+    
