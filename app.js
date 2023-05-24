@@ -8,6 +8,8 @@ const markers = require("./markers");
 
 const { Marker } = db;
 
+const axios = require("axios");
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -28,8 +30,20 @@ app.get("/api/markers/:id", (req, res) => {
   }
 });
 
-app.get("/map", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
+app.get("/map", async (req, res) => {
+  try {
+    const response = await axios.get("https://dapi.kakao.com/v2/maps/sdk.js", {
+      params: {
+        appkey: "ec6df88788dedfc17e7b75420e3abac6",
+        libraries: "services",
+      },
+    });
+
+    res.type("application/javascript").send(response.data);
+  } catch (error) {
+    console.error("Error fetching map script:", error);
+    res.status(500).send("Failed to fetch map script");
+  }
 });
 
 app.listen(process.env.PORT || 3000, () => {
