@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.send("URL should contain /api/..");
 });
 
-app.get("/api/markers", (req, res) => {
+app.get("/map/api/markers", (req, res) => {
   res.send(markers);
 });
 
@@ -28,7 +28,7 @@ app.get("/api/markers/:id", (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
+app.get("/map", (req, res) => {
   res.send(__dirname + "/public/index.html");
 });
 
