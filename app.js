@@ -29,7 +29,7 @@ app.get("/api/markers/:id", (req, res) => {
 });
 
 app.get("/map", (req, res) => {
-  res.send(__dirname + "/public/index.html");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 app.listen(process.env.PORT || 3000, () => {
