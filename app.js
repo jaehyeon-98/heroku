@@ -34,7 +34,7 @@ app.get("/map", async (req, res) => {
   try {
     const response = await axios.get("https://dapi.kakao.com/v2/maps/sdk.js", {
       params: {
-        appkey: "ec6df88788dedfc17e7b75420e3abac6",
+        appkey: "769174d1491a62bbc3d2217ff2e2ded1",
         libraries: "services",
       },
     });
@@ -51,3 +51,5 @@ app.listen(process.env.PORT || 3000, () => {
 });
 
 // 오류는 없는데 실행이 안됨, get이랑 post 해서 되는지 먼저 확인 해야할듯//
+
+3;
