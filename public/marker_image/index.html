@@ -1,0 +1,27 @@
+<!-- HTML 파일 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <title>DCUMap 테스트2</title>
+    <link rel="stylesheet" type="text/css" href="w-style.css">
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ec6df88788dedfc17e7b75420e3abac6&libraries=services"></script>  
+</head>
+<body>
+  <div id="map" style="width:100vw;height:100vh; position: absolute; left: 0; top: 0; margin: 0; padding: 0;"></div>
+
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="건물명을 입력하세요. ex) D2 or 공학관" />
+            <button type="button" id="search-button">검색</button>
+        </div>
+        <div id="search-result"></div>
+    </div>
+
+    <script src="map2.js"></script>
+    <script src="marker.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>
+
