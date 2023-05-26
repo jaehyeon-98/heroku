@@ -1,1 +1,2 @@
-GET https://test--server.herokuapp.com/api/markers
+GET https://test--server.herokuapp.com/map
+

@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 
 const app = express();
 
@@ -20,7 +21,7 @@ app.get("/map/api/markers", (req, res) => {
   res.send(markers);
 });
 
-app.get("/api/markers/:id", (req, res) => {
+app.get("/map/api/markers/:id", (req, res) => {
   const { id } = req.params;
   const marker = markers.find((m) => m.id === Number(id));
   if (marker) {
@@ -30,26 +31,12 @@ app.get("/api/markers/:id", (req, res) => {
   }
 });
 
-app.get("/map", async (req, res) => {
-  try {
-    const response = await axios.get("https://dapi.kakao.com/v2/maps/sdk.js", {
-      params: {
-        appkey: "769174d1491a62bbc3d2217ff2e2ded1",
-        libraries: "services",
-      },
-    });
+app.use("/map", express.static(path.join(__dirname, "./public")));
 
-    res.type("application/javascript").send(response.data);
-  } catch (error) {
-    console.error("Error fetching map script:", error);
-    res.status(500).send("Failed to fetch map script");
-  }
+app.get("/map", (req, res) => {
+  res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server is listening");
 });
-
-// 오류는 없는데 실행이 안됨, get이랑 post 해서 되는지 먼저 확인 해야할듯//
-
-3;
