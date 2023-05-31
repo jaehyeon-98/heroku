@@ -13,15 +13,15 @@ const axios = require("axios");
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("URL should contain /api/..");
-});
+// app.get("/", (req, res) => {
+//   res.send("URL should contain /api/..");
+// });
 
-app.get("/map/api/markers", (req, res) => {
+app.get("/markers", (req, res) => {
   res.send(markers);
 });
 
-app.get("/map/api/markers/:id", (req, res) => {
+app.get("/markers/:id", (req, res) => {
   const { id } = req.params;
   const marker = markers.find((m) => m.id === Number(id));
   if (marker) {
@@ -31,9 +31,9 @@ app.get("/map/api/markers/:id", (req, res) => {
   }
 });
 
-app.use("/map", express.static(path.join(__dirname, "./public")));
+app.use("/", express.static(path.join(__dirname, "./public")));
 
-app.get("/map", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
