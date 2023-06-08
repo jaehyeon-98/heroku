@@ -21,7 +21,7 @@ var D_positions = [
     latlng: new kakao.maps.LatLng(35.91330652052772, 128.80262535240885),
     testing: "D2 성마티아스관(공학관)입니다.",
     content: "공과대학, 소프트웨어 융합대학\n하양읍 금락리 308-5(지번)",
-    image: "./image/d2.jpg",
+    image: "./image/D2.jpg",
   },
   {
     title: "해양바이오산업연구센터 D3",
